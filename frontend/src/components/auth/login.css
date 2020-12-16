@@ -1,0 +1,101 @@
+.login-container {
+    margin-top: 11%;
+}
+
+.login-form-1 {
+    border-radius: 15px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form-1 h3 {
+    text-align: center;
+    color: #333;
+}
+
+.login-form-2 {
+    border-radius: 15px 0px 0px 15px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    padding: 5%;
+    background: #ff4f5ac2;
+}
+
+.login-form-2 h3 {
+    text-align: center;
+    color: #fff;
+}
+
+.login-container form {
+    padding: 10%;
+}
+
+.btnSubmit {
+    width: 50%;
+    border-radius: 1rem !important;
+    padding: 1.5% !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+.btnSubmit:hover {
+    background-color: #1a2e35 !important;
+}
+
+.login-form-2 .btnSubmit {
+    background-color: #fff;
+    color: #a2414b;
+    font-weight: bold;
+}
+
+.img-login {
+    width: 100%;
+    object-fit: cover;
+}
+
+.register-link {
+    color: #a2414b;
+    font-weight: bold;
+}
+
+.register-link:hover {
+    color: #a2414b;
+    text-decoration: none
+}
+
+.login-form-3 {
+    border-radius: 15px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    padding: 5%;
+    background: #79a2ff;
+}
+
+.login-form-3 h3 {
+    text-align: center;
+    color: #333;
+}
+
+.login-form-3 .btnSubmit {
+    background-color: #263238;
+}
+
+@media screen and (max-width: 768px) {
+    .login-form-2 {
+        border-radius: 0px;
+        box-shadow: none;
+    }
+    .login-form-1 {
+        border-radius: 0px;
+        padding: 0 !important;
+        box-shadow: none;
+    }
+    .login-container {
+        margin-top: 0;
+    }
+    .login-form-3 {
+        border-radius: 0px !important;
+        padding: 0 !important;
+        box-shadow: none;
+    }
+    .login-form-3 h3 {
+        margin-top: 25px;
+    }
+}
