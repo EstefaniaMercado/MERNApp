@@ -5,21 +5,13 @@ const _ = require('underscore')
 const User = require('../models/user');
 const { verifyToken } = require('../middlewares/autenticacion')
 const cors = require('cors')
+const jwt = require('jsonwebtoken');
 
 const app = express()
 app.use(cors())
 
-app.get('/user', (req, res) => {
-
-    // let desde = req.query.desde || 0;
-    // desde = Number(desde);
-
-    // let limite = req.query.limite || 5;
-    // limite = Number(limite);
-
+app.get('/user', verifyToken, (req, res) => {
     User.find({ status: true }, 'name email status google')
-        // .skip(desde)
-        // .limit(limite)
         .exec((err, users) => {
             if (err) {
                 return res.status(400).json({
@@ -28,12 +20,10 @@ app.get('/user', (req, res) => {
                 });
             }
 
-            User.count({ status: true }, (err) => {
-                res.json({
-                    ok: true,
-                    users,
-                });
-            })
+            res.json({
+                ok: true,
+                users,
+            });
         })
 })
 
@@ -54,9 +44,14 @@ app.post('/user', (req, res) => {
             });
         }
 
+        let token = jwt.sign({
+            user: userDB
+        }, process.env.SEED, { expiresIn: process.env.CADUCIDAD_TOKEN });
+
         res.json({
             ok: true,
-            user: userDB
+            user: userDB,
+            token
         })
 
     });
@@ -66,7 +61,7 @@ app.put('/user/:id', verifyToken, (req, res) => {
     let id = req.params.id;
     let body = _.pick(req.body, ['name', 'email', 'status']);
 
-    User.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, userDB) => {
+    User.findByIdAndUpdate(id, body, { new: true }, (err, userDB) => {
 
         if (err) {
             return res.status(400).json({
