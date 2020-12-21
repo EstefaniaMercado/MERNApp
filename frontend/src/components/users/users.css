@@ -1,0 +1,36 @@
+th {
+    text-align: center;
+    color: #fff;
+    background: #ff4f5a;
+}
+
+table {
+    background: #cccccc26;
+}
+
+.form-control:disabled {
+    background-color: transparent !important;
+    border: none;
+}
+
+.btn-outline-primary {
+    color: #79a2ff;
+    border-color: #79a2ff;
+}
+
+.btn-outline-primary:hover {
+    color: #fff !important;
+    background-color: #79a2ff !important;
+    border-color: #79a2ff !important;
+}
+
+.btn-outline-warning {
+    color: #2d56b3 !important;
+    border-color: #2d56b3 !important;
+}
+
+.btn-outline-warning:hover {
+    color: #fff !important;
+    background-color: #2d56b3 !important;
+    border-color: #2d56b3 !important;
+}

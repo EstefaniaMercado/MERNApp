@@ -2,14 +2,12 @@ import { types } from '../types/types';
 
 const initialState = {
     checking: true,
-    // uid: null,
-    // name: null
 }
 
-export const authReducer = ( state = initialState, action ) => {
+export const authReducer = (state = initialState, action) => {
 
-    switch ( action.type ) {
-        
+    switch (action.type) {
+
         case types.authLogin:
             return {
                 ...state,
@@ -24,15 +22,10 @@ export const authReducer = ( state = initialState, action ) => {
             }
 
         case types.authLogout:
-            return {
-                checking: false
-            }
-
+            return { checking: false }
 
         default:
             return state;
     }
 
 }
-
-

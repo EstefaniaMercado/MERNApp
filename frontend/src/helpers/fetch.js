@@ -1,8 +1,7 @@
 const baseUrl = 'http://localhost:8000';
 
 const fetchSinToken = (endpoint, data, method = 'GET') => {
-
-    const url = `${ baseUrl }/${ endpoint }`;
+    const url = `${baseUrl}/${endpoint}`;
 
     if (method === 'GET') {
         return fetch(url);
@@ -18,15 +17,13 @@ const fetchSinToken = (endpoint, data, method = 'GET') => {
 }
 
 const fetchConToken = (endpoint, data, method = 'GET') => {
-
-    const url = `${ baseUrl }/${ endpoint }`;
+    const url = `${baseUrl}/${endpoint}`;
     const token = localStorage.getItem('token') || '';
-
     if (method === 'GET') {
         return fetch(url, {
             method,
             headers: {
-                'x-token': token
+                'token': token
             }
         });
     } else {
@@ -34,16 +31,11 @@ const fetchConToken = (endpoint, data, method = 'GET') => {
             method,
             headers: {
                 'Content-type': 'application/json',
-                'x-token': token
+                'token': token
             },
             body: JSON.stringify(data)
         });
     }
 }
 
-
-
-export {
-    fetchSinToken,
-    fetchConToken
-}
+export { fetchSinToken, fetchConToken }
