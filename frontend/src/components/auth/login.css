@@ -99,3 +99,9 @@
         margin-top: 25px;
     }
 }
+
+@media screen and (max-width: 1400px) {
+    .login-container {
+        margin-top: 3%;
+    }
+}

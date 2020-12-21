@@ -1,0 +1,21 @@
+.navbar-light .navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.color {
+    background-color: #8e8e8e85 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #929292 !important;
+    font-weight: normal;
+}
+
+a {
+    color: #ffffff !important;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
