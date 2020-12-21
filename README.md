@@ -9,3 +9,5 @@ Ejecutar NPM INSTALL en la carpeta /backend y /frontend
 Para correr la parte frontend: npm start
 Para correr la parte backend: node server/server
 
+Nota: se debe registrar un usuario para tener un ingreso en la BD
+
